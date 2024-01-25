@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_one/widgets/iconButton.dart';
+import 'package:flutter_app_one/widgets/listAssets.dart';
+import 'package:flutter_app_one/widgets/moveItem.dart';
+import 'package:flutter_app_one/widgets/title.dart';
 
 void main() => runApp(const MyApp());
 
@@ -37,6 +41,8 @@ class _InicioState extends State<Inicio> {
               icon: const Icon(Icons.cast_sharp, color: Colors.white),
               onPressed: () {},
             ),
+            const IconWidgetItem(
+                iconItem: Icons.access_time_sharp, colorItem: Colors.white),
             IconButton(
               icon: const Icon(Icons.search, color: Colors.white),
               onPressed: () {},
@@ -51,58 +57,10 @@ class _InicioState extends State<Inicio> {
           child: Column(
             children: <Widget>[
               Image.asset('assets/images/main_banner.jpg'),
-              Container(
-                width: double.maxFinite,
-                margin: EdgeInsets.only(top: 40),
-                child: Text(
-                  'Populares en Netflix',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.white, fontSize: 22),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20, bottom: 20),
-                child: SizedBox(
-                  height: 200, // Altura deseada para la lista horizontal
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Image.asset('assets/images/alice.jpg'),
-                      Image.asset('assets/images/avengers.jpg'),
-                      Image.asset('assets/images/back2.jpg'),
-                      Image.asset('assets/images/black.jpg'),
-                      Image.asset('assets/images/cosmos.jpg'),
-                      Image.asset('assets/images/dune.jpg'),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                width: double.maxFinite,
-                margin: EdgeInsets.only(top: 40),
-                child: Text(
-                  'Ver nuevamente',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.white, fontSize: 22),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20, bottom: 20),
-                child: SizedBox(
-                  height: 200, // Altura deseada para la lista horizontal
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Image.asset('assets/images/how.jpg'),
-                      Image.asset('assets/images/lord.jpg'),
-                      Image.asset('assets/images/snyder.jpg'),
-                      Image.asset('assets/images/stranger.jpg'),
-                      Image.asset('assets/images/cosmos.jpg'),
-                      Image.asset('assets/images/dune.jpg'),
-                    ],
-                  ),
-                ),
-              ),
+              TitleSection(title: "Populares en Netflix", color: Colors.white),
+              movesItem(listMovies: assetPopular),
+              TitleSection(title: "Ver nuevamente", color: Colors.white),
+              movesItem(listMovies: assetVistos)
             ],
           ),
         ));
