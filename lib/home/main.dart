@@ -64,6 +64,4 @@ class _InicioState extends State<Inicio> {
           ),
         ));
   }
-
-  void onPressed() {}
 }
