@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_one/widgets/iconButton.dart';
-import 'package:flutter_app_one/widgets/listAssets.dart';
-import 'package:flutter_app_one/widgets/moveItem.dart';
+import 'package:flutter_app_one/widgets/icon_button.dart';
+import 'package:flutter_app_one/widgets/list_assets.dart';
+import 'package:flutter_app_one/widgets/move_item.dart';
 import 'package:flutter_app_one/widgets/title.dart';
 
 void main() => runApp(const MyApp());
@@ -56,9 +56,9 @@ class _InicioState extends State<Inicio> {
           child: Column(
             children: <Widget>[
               Image.asset('assets/images/main_banner.jpg'),
-              TitleSection(title: "Populares en Netflix", color: Colors.white),
+              const TitleSection(title: "Populares en Netflix", color: Colors.white),
               movesItem(listMovies: assetPopular),
-              TitleSection(title: "Ver nuevamente", color: Colors.white),
+              const TitleSection(title: "Ver nuevamente", color: Colors.white),
               movesItem(listMovies: assetVistos)
             ],
           ),
